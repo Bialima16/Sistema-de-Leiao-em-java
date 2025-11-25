@@ -9,42 +9,42 @@ public class Leilao {
     private Time horaFimLeilao;
     private Boolean statusLeilao;
 
-     public String getIdLeilao(){
+     public int getIdLeilao(){
         return this.idLeilao;
     }
     public void setIdLeilao(int idLeilao){
        this.idLeilao = idLeilao;
     }
 
-     public String getDataInicioLeiao(){
+     public Date getDataInicioLeiao(){
         return this.dataInicioLeiao;
     }
     public void setDataInicioLeiao(Date dataInicioLeiao){
        this.dataInicioLeiao = dataInicioLeiao;
     }
 
-    public String getHoraInicioLeilao(){
+    public Time getHoraInicioLeilao(){
         return this.horaInicioLeilao;
     }
     public void setHoraInicioLeilao(Time horaInicioLeilao){
        this.horaInicioLeilao = horaInicioLeilao;
     }
 
-     public String getDataFimLeilao(){
+     public Date getDataFimLeilao(){
         return this.dataFimLeilao;
     }
-    public void setDataFimLeilao(Time dataFimLeilao){
+    public void setDataFimLeilao(Date dataFimLeilao){
        this.dataFimLeilao = dataFimLeilao;
     }
 
-    public String getHoraFimLeilao(){
+    public Time getHoraFimLeilao(){
         return this.horaFimLeilao;
     }
     public void setHoraFimLeilao(Time horaFimLeilao){
        this.horaFimLeilao = horaFimLeilao;
     }
 
-     public String getStatusLeilao(){
+     public Boolean getStatusLeilao(){
         return this.statusLeilao;
     }
     public void setStatusLeilao(Boolean statusLeilao){
@@ -59,4 +59,9 @@ public class Leilao {
         this.horaFimLeilao = horaFimLeilao;
         this.statusLeilao = statusLeilao;
     }
+
+    public void mostrar(){
+      System.out.println(this.toString());
+    }
+
 }
