@@ -2,16 +2,14 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.sql.Date;
-import java.sql.Time;
 import java.util.ArrayList;
 
 public class Leilao {
     private int idLeilao;
-    private Date dataInicioLeiao;
-    private Time horaInicioLeilao;
-    private Date dataFimLeilao;
-    private Time horaFimLeilao;
+    private String dataInicioLeiao;
+    private String horaInicioLeilao;
+    private String dataFimLeilao;
+    private String horaFimLeilao;
     private Boolean statusLeilao;
 
      public int getIdLeilao(){
@@ -21,31 +19,31 @@ public class Leilao {
        this.idLeilao = idLeilao;
     }
 
-     public Date getDataInicioLeiao(){
+     public String getDataInicioLeiao(){
         return this.dataInicioLeiao;
     }
-    public void setDataInicioLeiao(Date dataInicioLeiao){
+    public void setDataInicioLeiao(String dataInicioLeiao){
        this.dataInicioLeiao = dataInicioLeiao;
     }
 
-    public Time getHoraInicioLeilao(){
+    public String getHoraInicioLeilao(){
         return this.horaInicioLeilao;
     }
-    public void setHoraInicioLeilao(Time horaInicioLeilao){
+    public void setHoraInicioLeilao(String horaInicioLeilao){
        this.horaInicioLeilao = horaInicioLeilao;
     }
 
-     public Date getDataFimLeilao(){
+     public String getDataFimLeilao(){
         return this.dataFimLeilao;
     }
-    public void setDataFimLeilao(Date dataFimLeilao){
+    public void setDataFimLeilao(String dataFimLeilao){
        this.dataFimLeilao = dataFimLeilao;
     }
 
-    public Time getHoraFimLeilao(){
+    public String getHoraFimLeilao(){
         return this.horaFimLeilao;
     }
-    public void setHoraFimLeilao(Time horaFimLeilao){
+    public void setHoraFimLeilao(String horaFimLeilao){
        this.horaFimLeilao = horaFimLeilao;
     }
 
@@ -56,7 +54,7 @@ public class Leilao {
        this.statusLeilao = statusLeilao;
     }
 
-    public Leilao (int idLeilao, Date dataInicioLeiao, Time horaInicioLeilao, Date dataFimLeilao, Time horaFimLeilao, Boolean statusLeilao ){
+    public Leilao (int idLeilao, String dataInicioLeiao, String horaInicioLeilao, String dataFimLeilao, String horaFimLeilao, Boolean statusLeilao ){
         this.idLeilao = idLeilao;
         this.dataInicioLeiao = dataInicioLeiao;
         this.horaInicioLeilao = horaInicioLeilao;
@@ -80,10 +78,10 @@ public class Leilao {
                String[] dados = linha.split(",");
                if (idLeilao == Integer.parseInt(dados[0])) {
                   leilao.setIdLeilao(Integer.parseInt(dados[0]));
-                  leilao.setDataInicioLeiao(Date.valueOf(dados[1]));
-                  leilao.setHoraInicioLeilao(Time.valueOf(dados[2]));
-                  leilao.setDataFimLeilao(Date.valueOf(dados[3]));
-                  leilao.setHoraFimLeilao(Time.valueOf(dados[4]));
+                  leilao.setDataInicioLeiao(String.valueOf(dados[1]));
+                  leilao.setHoraInicioLeilao(String.valueOf(dados[2]));
+                  leilao.setDataFimLeilao(String.valueOf(dados[3]));
+                  leilao.setHoraFimLeilao(String.valueOf(dados[4]));
                   leilao.setStatusLeilao(Boolean.valueOf(dados[5]));
                   
                   break;
@@ -164,7 +162,7 @@ public class Leilao {
       String linha = "";
       while ((linha = br.readLine()) != null) {
             String[] dados = linha.split(";");
-            Leilao l1 = new Leilao(Integer.parseInt(dados[0]), Date.valueOf(dados[1]), Time.valueOf(dados[2]), Date.valueOf(dados[3]), Time.valueOf(dados[4]), Boolean.valueOf(dados[5]));
+            Leilao l1 = new Leilao(Integer.parseInt(dados[0]), String.valueOf(dados[1]), String.valueOf(dados[2]), String.valueOf(dados[3]), String.valueOf(dados[4]), Boolean.valueOf(dados[5]));
             leiloes.add(l1);
       }
          br.close();

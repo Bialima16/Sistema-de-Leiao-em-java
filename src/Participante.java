@@ -97,8 +97,8 @@ public class Participante {
       FileWriter fw = new FileWriter("participantes.txt",true);
       BufferedWriter bw = new BufferedWriter(fw);
 
-      String linha = participante.getEmailParticipante() + ";" + participante.getEnderecoParticipante() + ";" + participante.getIdParticipante() + ";" + participante.getLoginParticipante() + ";" + 
-      participante.getNomeParticipante() + ";" + participante.getSenhaParticipante() + ";" + participante.getTelefoneParticipante();
+      String linha = participante.getIdParticipante() + ";" + participante.getLoginParticipante() + ";" + participante.getSenhaParticipante() + ";" + participante.getNomeParticipante() + ";" + 
+      participante.getEmailParticipante() + ";" + participante.getTelefoneParticipante() + ";" + participante.getEnderecoParticipante();
 
       bw.write(linha);
       bw.newLine();

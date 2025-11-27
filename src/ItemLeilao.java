@@ -96,7 +96,7 @@ public class ItemLeilao {
     return item;
   }
  public boolean arrematarItem(int idItem, double valorLance) throws Exception {
-    FileReader fr = new FileReader("itensLeilao.txt");
+    FileReader fr = new FileReader("itemleilao.txt");
     BufferedReader br = new BufferedReader(fr);
     String linha = "";
     StringBuilder sb = new StringBuilder();
@@ -113,7 +113,7 @@ public class ItemLeilao {
     br.close();
     fr.close();
 
-    FileWriter fw = new FileWriter("itensLeilao.txt");
+    FileWriter fw = new FileWriter("itemleilao.txt");
     BufferedWriter bw = new BufferedWriter(fw);
     bw.write(sb.toString());
     bw.close();

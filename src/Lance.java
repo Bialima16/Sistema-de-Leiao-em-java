@@ -2,8 +2,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.sql.Date;
-import java.sql.Time;
 import java.util.ArrayList;
 
 public class Lance {
@@ -11,8 +9,8 @@ public class Lance {
     private Participante participante;
     private ItemLeilao itemLeilao;
     private Double valorLance;
-    private Date dataLance;
-    private Time horaLance;
+    private String dataLance;
+    private String horaLance;
 
     public int getIdlance(){
         return this.idLance;
@@ -42,21 +40,21 @@ public class Lance {
        this.valorLance = valorLance;
     }
 
-    public Date getDataLance(){
+    public String getDataLance(){
         return this.dataLance;
     }
-    public void setDataLance(Date dataLance){
+    public void setDataLance(String dataLance){
        this.dataLance = dataLance;
     }
 
-    public Time getHoraLance(){
+    public String getHoraLance(){
         return this.horaLance;
     }
-    public void setHoraLance(Time horaLance){
+    public void setHoraLance(String horaLance){
        this.horaLance = horaLance;
     }
 
-    public Lance(int idLance, Participante participante, ItemLeilao itemLeilao, Double valorLance, Date dataLance, Time horaLance){
+    public Lance(int idLance, Participante participante, ItemLeilao itemLeilao, Double valorLance, String dataLance, String horaLance){
         this.idLance = idLance;
         this.participante = participante;
         this.itemLeilao = itemLeilao;
@@ -89,7 +87,7 @@ public class Lance {
       String linha = "";
       while ((linha = br.readLine()) != null){
          String[] dados = linha.split(";");
-         Lance p1 = new Lance(Integer.parseInt(dados[0]), null, null, Double.valueOf(dados[1]), Date.valueOf(dados[3]), Time.valueOf(dados[4]));
+         Lance p1 = new Lance(Integer.parseInt(dados[0]), null, null, Double.valueOf(dados[1]), String.valueOf(dados[3]), String.valueOf(dados[4]));
          lances.add(p1);
       }
       br.close();
